@@ -1,11 +1,42 @@
 <div ng-controller="chatController">
 
-    <div>
-        chat compnent {{bla}}
+
+    <div class="avenue-messenger">
+      <!--
+        <div class="agent-face">
+            <div class="half">
+                <img class="agent circle" src="http://askavenue.com/img/17.jpg" alt="Jesse Tino"></div>
+        </div>-->
+        <div class="chat">
+            <div class="chat-title">
+                <h1>Jesse Tino</h1>
+                <h2>RE/MAX</h2>
+            </div>
+            <div class="messages">
+                <div class="messages-content">
+
+                    <div class="message message-personal">
+                        example message
+                        <div class="timestamp">
+                            44:44
+                        </div>
+                    </div>
+
+                    <div class="message new">
+                        friend message
+                        <div class="timestamp">
+                            44:44
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="message-box">
+                <textarea type="text" class="message-input" placeholder="Type message..."></textarea>
+                <button type="submit" class="message-submit">Send</button>
+            </div>
+        </div>
     </div>
-    <button ng-click="sentMessage()">
-        test socket
-    </button>
 
 
 </div>
