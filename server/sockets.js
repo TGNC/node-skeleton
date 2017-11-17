@@ -4,18 +4,16 @@ module.exports = io => {
     let bot = require('./bot');
 
     function getCurrentTime() {
-        var date = new Date();
+        let date = new Date();
         return date.getHours() + ':' + date.getMinutes();
     }
 
     io.on('connection', function(socket){
         console.log('a user connected');
 
-
         socket.on('disconnect', function(){
             console.log('user disconnected');
         });
-
 
         socket.on('messageSend', function(msg){
             console.log('messageSend: ' + msg);
@@ -25,7 +23,7 @@ module.exports = io => {
             socket.broadcast.emit('messageReceive', msg);
 
             //Run bot on the given message
-            var botResponse = bot.run(msg.text);
+            let botResponse = bot.run(msg.text);
 
             if(botResponse){
                 io.emit('messageReceive', {

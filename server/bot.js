@@ -50,8 +50,8 @@ function checkHistoryResponse(msgText) {
 }
 
 function randomResponse() {
+    //Chose random response
     let randomIndex = Math.floor(Math.random() * randomResponses.length);
-
     return randomResponses[randomIndex];
 }
 

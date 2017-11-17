@@ -1,7 +1,7 @@
 
 
 var messages = (function () {
-    var instance;
+    let instance;
 
     function createInstance() {
         return [];
