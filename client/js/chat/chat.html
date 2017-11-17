@@ -2,15 +2,11 @@
 
 
     <div class="avenue-messenger">
-      <!--
-        <div class="agent-face">
-            <div class="half">
-                <img class="agent circle" src="http://askavenue.com/img/17.jpg" alt="Jesse Tino"></div>
-        </div>-->
         <div class="chat">
             <div class="chat-title">
-                <h1>Jesse Tino</h1>
-                <h2>RE/MAX</h2>
+                <h1>Forter chat</h1>
+                <h2>Please use '@bot' in  your messages in order to communicate with the bot</h2>
+                <h2>Your nickname is {{userName}}</h2>
             </div>
             <div class="messages">
                 <div class="messages-content">
@@ -18,10 +14,14 @@
                     <div ng-repeat="message in messages">
 
                         <div class="message new" ng-class="{'message-personal' : message.isOwnMessage}">
-                            {{message.isBot ? '@bot: ': null}}{{message.text}}
-                            <div class="timestamp">
-                                {{message.time}}
+                            {{message.text}}
+                            <div class="message-metadata">
+                                <div class="message-username">{{message.userName}}</div>
+                                <div class="timestamp">
+                                    {{message.time}}
+                                </div>
                             </div>
+
                         </div>
 
                     </div>

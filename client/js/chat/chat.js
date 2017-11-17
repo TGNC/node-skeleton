@@ -3,10 +3,12 @@
     function chatController($scope) {
         console.log('in chat controller');
 
-        $scope.bla = 'nadav';
+        const chance = new Chance();
+        $scope.userName = chance.hashtag();
 
         $scope.sendMessage = function () {
             var newMessage = {
+                userName: $scope.userName,
                 isOwnMessage: true,
                 text: $scope.messageInput,
                 time: getCurrentTime()
@@ -19,7 +21,7 @@
             $scope.messageInput = null;
 
             //Send the message to the server
-            $scope.socket.emit('messageSend', {text: newMessage.text, time: newMessage.time});
+            $scope.socket.emit('messageSend', {text: newMessage.text, time: newMessage.time, userName: newMessage.userName});
 
             scrollBottom();
         };
@@ -36,14 +38,8 @@
 
         $scope.messages = [
             {
-                isOwnMessage: true,
-                text: 'bla bla',
-                time: getCurrentTime()
-            },
-            {
                 isOwnMessage: false,
-                text: 'not my own message',
-                time: getCurrentTime()
+                text: 'Welcome to the chat room!'
             }
         ];
 

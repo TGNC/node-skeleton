@@ -31,7 +31,7 @@ module.exports = io => {
                 io.emit('messageReceive', {
                     text: botResponse,
                     time: getCurrentTime(),
-                    isBot: true
+                    userName: '@bot'
                 });
             }
         });

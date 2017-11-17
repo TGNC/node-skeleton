@@ -4,11 +4,6 @@ Mixins
 /*--------------------
 Body
 --------------------*/
-*,
-*::before,
-*::after {
-    /*box-sizing: border-box;*/
-}
 
 html,
 body {
@@ -66,42 +61,27 @@ Chat Title
     width: 100%;
     border-bottom: 1px solid #ccc;
     color: #777;
-    padding-top: 50px;
+    padding-top: 20px;
     padding-bottom: 5px;
     background-color: #fff;
     text-transform: uppercase;
     text-align: center;
+
 }
-.chat-title h1,
-.chat-title h2 {
-    font-weight: normal;
+.chat-title h1 {
+    margin-bottom: 7px;
     font-size: 14px;
     margin: 0;
     padding: 0;
 }
+
 .chat-title h2 {
-    /* color: rgba(255, 255, 255, .8);*/
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 1px;
-}
-.chat-title .avatar {
-    position: absolute;
-    z-index: 1;
-    top: 8px;
-    left: 9px;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    border-radius: 30px;
-    width: 60px;
-    height: 60px;
-    overflow: hidden;
+    text-transform: lowercase;
     margin: 0;
     padding: 0;
-    border: 1px solid #fff;
-}
-.chat-title .avatar img {
-    width: 100%;
-    height: auto;
+    font-weight: normal;
 }
 
 /*--------------------
@@ -140,13 +120,26 @@ Messages
     border: 1px solid #ccc;
     /*text-shadow: 0 1px 1px rgba(0, 0, 0, .2);*/
 }
-.messages .message .timestamp {
+.messages .message .message-metadata {
     position: absolute;
     bottom: -15px;
+    right: -23px;
+    display: flex;
+    padding-right: 1px;
+}
+.messages .message.message-personal .message-metadata{
+    right: 0;
+}
+.messages .message .message-metadata .message-username{
+    margin-right: 3px;
     font-size: 10px;
     color: #555;
-    right: 5px;
 }
+.messages .message .message-metadata .timestamp{
+    font-size: 10px;
+    color: #555;
+}
+
 .messages .message .checkmark-sent-delivered {
     position: absolute;
     bottom: -15px;

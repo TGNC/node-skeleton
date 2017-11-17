@@ -17,9 +17,4 @@ var messages = (function () {
     };
 })();
 
-/*
-module.exports = {
-    messages: messages
-};
-*/
 module.exports.default = messages;
