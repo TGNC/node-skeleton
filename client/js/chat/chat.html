@@ -1,18 +1,15 @@
 <div ng-controller="chatController" class="chat-wrapper">
 
-
     <div class="avenue-messenger">
         <div class="chat">
             <div class="chat-title">
                 <h1>Forter chat</h1>
-                <h2>Please use '@bot' in  your messages in order to communicate with the bot</h2>
+                <h2>Please use '@bot' in your messages in order to communicate with the bot</h2>
                 <h2>Your nickname is {{userName}}</h2>
             </div>
             <div class="messages">
                 <div class="messages-content">
-
                     <div ng-repeat="message in messages">
-
                         <div class="message new" ng-class="{'message-personal' : message.isOwnMessage}">
                             {{message.text}}
                             <div class="message-metadata">
@@ -21,20 +18,16 @@
                                     {{message.time}}
                                 </div>
                             </div>
-
                         </div>
-
                     </div>
-
-
                 </div>
             </div>
             <div class="message-box">
-                <textarea type="text" class="message-input" placeholder="Type message..." ng-model="messageInput"></textarea>
+                <textarea type="text" class="message-input" placeholder="Type message..."
+                          ng-model="messageInput"></textarea>
                 <button type="submit" class="message-submit" ng-click="sendMessage()">Send</button>
             </div>
         </div>
     </div>
-
 
 </div>
