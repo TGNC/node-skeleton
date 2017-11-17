@@ -18,7 +18,7 @@
                     <div ng-repeat="message in messages">
 
                         <div class="message new" ng-class="{'message-personal' : message.isOwnMessage}">
-                            {{message.text}}
+                            {{message.isBot ? '@bot: ': null}}{{message.text}}
                             <div class="timestamp">
                                 {{message.time}}
                             </div>
