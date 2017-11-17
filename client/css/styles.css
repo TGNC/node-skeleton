@@ -7,7 +7,7 @@ Body
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+    /*box-sizing: border-box;*/
 }
 
 html,
@@ -42,16 +42,11 @@ Chat
 --------------------*/
 .chat {
     position: relative;
-    /*  top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);*/
+
     width: 100%;
     height: calc(100% - 15px);
-    max-height: 500px;
     z-index: 10;
     overflow: hidden;
-    /*box-shadow: 0 5px 30px rgba(0, 0, 0, .2);*/
-    /* background: rgba(0, 0, 0, .5);*/
     background: transparent;
     border-radius: 20px;
     -webkit-border-radius: 20px;
@@ -114,8 +109,6 @@ Messages
 --------------------*/
 .messages {
     flex: 1 1 auto;
-    /*  color: rgba(255, 255, 255, .5);
-    color: #fff;*/
     overflow: hidden;
     position: relative;
     width: 100%;
@@ -127,7 +120,9 @@ Messages
     height: 101%;
     width: 100%;
     margin-right: 0px;
-    padding: 0 10px;
+    padding-right: 20px;
+    overflow: hidden;
+    overflow-y: scroll;
 }
 .messages .message {
     clear: both;
@@ -138,7 +133,7 @@ Messages
     border-radius: 20px 20px 20px 0;
     background: #eee;
     /*rgba(0, 0, 0, 0.1);*/
-    margin: 8px 0;
+    margin: 8px 10px 0 10px;
     font-size: 14px;
     line-height: 1.4;
     position: relative;
@@ -295,12 +290,6 @@ Message Box
     width: 90%;
     background: #fff;
     margin: 2px auto;
-    /*-webkit-box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.4);
-    -moz-box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.4);
-    box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.4);*/
-    /*background: rgba(0, 0, 0, 0.3);
-      border-top:1px solid #e3e3e3;*/
-    padding: 10px;
     position: relative;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
@@ -313,12 +302,11 @@ Message Box
     border: none;
     outline: none !important;
     resize: none;
-    /* color: rgba(255, 255, 255, .8);*/
     font-size: 15px;
     height: 24px;
     margin: 0;
-    padding-right: 20px;
-    width: 265px;
+    padding: 10px 0 10px 10px;
+    width: 90%;
     color: #444;
 }
 .message-box textarea:focus:-webkit-placeholder {
@@ -350,6 +338,7 @@ Message Box
 /*--------------------
 Custom Srollbar
 --------------------*/
+/*
 .mCSB_scrollTools {
     margin: 1px -3px 1px 0;
     opacity: 0;
@@ -363,6 +352,7 @@ Custom Srollbar
 .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
     background-color: rgba(0, 0, 0, 0.5) !important;
 }
+*/
 
 /*--------------------
 Bounce
@@ -416,24 +406,24 @@ Bounce
         transform: translateY(-10px);
     }
 }
+
+.chat-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
 .avenue-messenger {
     opacity: 1;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px;
-    height: calc(100% - 60px) !important;
-    max-height: 700px !important;
+    height: 80%;
+    max-height: 900px !important;
     min-height: 220px !important;
-    width: 430px;
-    /*  transform: translateY(0);
-      -webkit-transform: translateY(0);
-      -moz-transform: translateY(0);
-    */
+    width: 700px;
     background: rgba(255, 255, 255, 0.9);
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    margin: auto;
     z-index: 10;
     box-shadow: 2px 10px 40px rgba(22, 20, 19, 0.4);
     /*  transform: translateX(300px);*/

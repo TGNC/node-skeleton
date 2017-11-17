@@ -5,9 +5,55 @@
 
         $scope.bla = 'nadav';
 
-        $scope.sentMessage = function () {
-            $scope.socket.emit('messageSent', 'test');
+        $scope.sendMessage = function () {
+            var newMessage = {
+                isOwnMessage: true,
+                text: $scope.messageInput,
+                time: getCurrentTime()
+            };
+
+            //Add the message to the messages List
+            $scope.messages.push(newMessage);
+
+            //Clear the input field
+            $scope.messageInput = null;
+
+            //Send the message to the server
+            $scope.socket.emit('messageSend', {text: newMessage.text, time: newMessage.time});
+
+            scrollBottom();
+        };
+
+        function getCurrentTime() {
+            var date = new Date();
+            return date.getHours() + ':' + date.getMinutes();
         }
+
+        function scrollBottom() {
+            $(".messages-content").animate({ scrollTop: $('.messages-content').prop("scrollHeight")}, 500);
+
+        }
+
+        $scope.messages = [
+            {
+                isOwnMessage: true,
+                text: 'bla bla',
+                time: getCurrentTime()
+            },
+            {
+                isOwnMessage: false,
+                text: 'not my own message',
+                time: getCurrentTime()
+            }
+        ];
+
+        $scope.socket.on('messageReceive', function (msg) {
+            msg.isOwnMessage = false;
+            $scope.messages.push(msg);
+
+            $scope.$apply(); //Apply the changes made because of the socket
+            scrollBottom();
+        });
 
         function initChat() {
             var $messages = $('.messages-content'),

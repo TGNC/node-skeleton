@@ -9,8 +9,11 @@ module.exports = io => {
         });
 
 
-        socket.on('messageSent', function(msg){
-            console.log('message: ' + msg);
+        socket.on('messageSend', function(msg){
+            console.log('messageSend: ' + msg);
+
+            //Send the message to all the other connected clients
+            socket.broadcast.emit('messageReceive', msg);
         });
 
     });
